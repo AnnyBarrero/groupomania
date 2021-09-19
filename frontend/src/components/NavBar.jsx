@@ -31,7 +31,7 @@ const NavBar = () => {
                    <Button variant="text" >
                    <Link to="./Home">
                   
-                     <img src="/icon-left-font-monochrome-white.svg"  height="35px" />
+                     <img src="/icon-left-font-monochrome-white.svg"  height="35px" alt="logo"/>
                    
                        
                    </Link>

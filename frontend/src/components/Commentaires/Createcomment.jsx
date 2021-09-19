@@ -27,7 +27,7 @@ export default function Create() {
         if (titre === '') {
             setTitreErreur(true)
         }
-        if (commentaire == '') {
+        if (commentaire === '') {
             setCommentaireErreur(true)
         }
         if (titre && commentaire) {
