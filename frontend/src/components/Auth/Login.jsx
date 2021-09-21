@@ -3,24 +3,7 @@ import {
     makeStyles, Grid, Paper, Avatar, Button, Typography
 } from '@material-ui/core'
 import { Link } from 'react-router-dom';
-//import axios from 'axios'
-//import Cookies from 'js-cookie'
-//import { useForm } from "react-hook-form";
 import PropTypes from 'prop-types';
-import { Router, Route } from 'react-router-dom/cjs/react-router-dom.min';
-
-
-const styles = makeStyles(theme => ({
-    root: {
-        display: 'flex'
-    },
-    toolbar: theme.mixins.toolbar,
-    content: {
-        flexGrow: 1,
-        backgroundColor: theme.palette.background.default,
-        padding: theme.spacing(3),
-    },
-}))
 
 
 async function loginUser(credentials) {
@@ -34,18 +17,30 @@ async function loginUser(credentials) {
       .then(data => data.json())
    }
 
-export default function Container({ setToken }) {
+export default function Login({ setToken }) {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
     //handleSubmit va appeller loginUser avec l'username et password
     const handleSubmit = async e => {
         e.preventDefault();
         const token = await loginUser({
-          email,
+         email,
           password
         });
         setToken(token);
       }
+
+      const styles = makeStyles(theme => ({
+        root: {
+            display: 'flex'
+        },
+        toolbar: theme.mixins.toolbar,
+        content: {
+            flexGrow: 1,
+            backgroundColor: theme.palette.background.default,
+            padding: theme.spacing(3),
+        },
+    }))
     const paperStyle={padding :20,height:'70vh',width:280, margin:"20px auto"}
     const btnstyle={margin:'8px 0'}
     const classes = styles()
@@ -54,7 +49,7 @@ export default function Container({ setToken }) {
 
     return (
         <Grid>
-            <Router>
+            
             <div className={classes.toolbar}></div>
             <Paper elevation={20} style={paperStyle}>
                 <Grid align='center'>
@@ -76,18 +71,20 @@ export default function Container({ setToken }) {
                          Sign in
                     </Button>
                     <Typography > Vous n'avez pas de compte? 
-                     <Route>
+                    
+                    
                         <Link to="/Signup">S'inscrire</Link>
-                     </Route>
+                     
+                     
                     </Typography>
              </form>
            </Paper>
-           </Router>
+           
         </Grid>
     )
 }
 
-Container.propTypes = {
+Login.propTypes = {
     setToken: PropTypes.func.isRequired
   }
   

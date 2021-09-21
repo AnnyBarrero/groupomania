@@ -1,7 +1,7 @@
 import { Avatar, Grid, Paper, makeStyles} from '@material-ui/core';
 import React from 'react';
-import {Link} from 'react-router-dom';
-import { Route } from 'react-router-dom/cjs/react-router-dom.min';
+import { Link } from 'react-router-dom';
+//import { Route } from 'react-router-dom/cjs/react-router-dom.min';
 
 
 const styles = makeStyles(theme => ({
@@ -15,7 +15,8 @@ const Home = () => {
     const classes = styles()
     
     return (
-        <React.Fragment>
+      
+        
             <Grid>
             <div className={classes.toolbar}></div>
                 <div className="container">
@@ -27,15 +28,16 @@ const Home = () => {
                     </Grid>
                     
 
-                    <Route>
+                    
                     <p><Link to="/Login">Connectez-vous</Link> au réseau social de Groupomania pour échanger avec vos collégues sans plus tarder ! <br />
                     <br />
                     Si vous n'avez pas encore de compte, <Link to="/Signup">inscrivez-vous ici</Link> !</p>
-                    </Route>
+                
                     </Paper>
+                    
                 </div>
             </Grid>
-        </React.Fragment>
+            
     );
 }
 
