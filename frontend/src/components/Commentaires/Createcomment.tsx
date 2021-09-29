@@ -19,21 +19,7 @@ export default function Create() {
     const [commentaireErreur, setCommentaireErreur] = useState(false)
     
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        setTitreErreur(false)
-        setCommentaireErreur(false)
-
-        if (titre === '') {
-            setTitreErreur(true)
-        }
-        if (commentaire === '') {
-            setCommentaireErreur(true)
-        }
-        if (titre && commentaire) {
-            console.log(titre, commentaire)
-        }
-    }
+    
 
     return (
         <Container>
@@ -46,7 +32,7 @@ export default function Create() {
                 Créer un nouveau commentaire
             </Typography>
             
-            <form noValidate autoComplete="off" onSubmit={handleSubmit}>
+            <form noValidate autoComplete="off" >
                 <TextField
                 onChange={(e) => setTitre(e.target.value)}
                 className={classes.field}

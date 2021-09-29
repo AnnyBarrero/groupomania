@@ -1,5 +1,5 @@
 import { makeStyles, Grid, Avatar, Paper, Typography } from '@material-ui/core';
-import React from 'react'
+import React from 'react';
 
 
 const styles = makeStyles(theme => ({
@@ -8,15 +8,16 @@ const styles = makeStyles(theme => ({
     
 }))
 
-export default function UsersPage() {
+const UsersPage = (props: { username: string }) => {
 
+    ///STYLES
     const paperStyle={padding:'30px 20px',width:300, margin:"20px auto"}
     const headerStyle={margin:0}   
     const classes = styles()
 
-    React.useEffect(() => {
-        console.log('useEffect')
-    })
+        ///////////
+    
+
     
     return (
         <Grid>
@@ -24,13 +25,14 @@ export default function UsersPage() {
             
             <div className={classes.toolbar}></div>
             <Paper elevation={20} style={paperStyle}>
-               <Grid align='center'>
+               <Grid>
                    
                <Avatar src="/icon.png"/>
-                   <h1 style={headerStyle}>Bienvenue </h1>
+                   <h1 style={headerStyle}>
+                       {props.username ? 'Bonjour' + props.username: 'Vous etes connecter'} </h1>
                    
                     <Typography variant='caption'> 
-                    Veuillez compléter les informations
+                    Votre espace utilisateur
                     
                     </Typography>
                </Grid>
@@ -42,3 +44,4 @@ export default function UsersPage() {
     )
 }
 
+export default UsersPage;

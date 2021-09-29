@@ -22,7 +22,7 @@ const Home = () => {
                 <div className="container">
                 
                     <Paper elevation={20} style={paperStyle}>
-                    <Grid align='center'>
+                    <Grid >
                         <Avatar src="/icon.png" />
                     <h1 style={headerStyle}>Bienvenue sur le Groupomania Social Network !</h1>
                     </Grid>
