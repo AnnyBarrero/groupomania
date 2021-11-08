@@ -7,7 +7,7 @@ var likesCtrl    = require('./routes/likesCtrl');
 // Router
 exports.router = (function() {
   var apiRouter = express.Router();
-
+  
   // Users routes
   apiRouter.route('/users/register/').post(usersCtrl.register);
   apiRouter.route('/users/login/').post(usersCtrl.login);

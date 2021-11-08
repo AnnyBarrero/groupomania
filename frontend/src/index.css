@@ -1,13 +1,128 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+html {
+  margin: 0;
+  padding: 0;
+}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+a {
+  font-weight: bolder;
+  text-decoration: none;
+}
+a:visited {
+  color: black;
+}
+
+/** FOOTER ***/
+.footer-list {
+  color: white;
+}
+
+footer {
+  flex-direction: row!important;
+  width: 100%;
+  margin: auto;
+  left: 0;
+  bottom: 0;
+}
+/**COMMENTAIRES */
+.comments-container{
+  padding-top: 120px;
+  
+
+}
+.form-style{
+  width: 50%;
+}
+.button-style{
+  padding-top: 30%;
+}
+
+
+.Button-commentaires{
+  padding-top: 20px;
+  padding-bottom: 50px;
+  
+}
+.Button-commentaires Link{
+  color: white;
+}
+.comment-button{
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+
+.grid-container {
+  display: grid;
+  justify-items: left;
+  justify-items: stretch;
+  justify-content: stretch;
+  align-items: stretch;
+  grid-template-columns: 5% 25% 35% 25%;
+  grid-template-rows: 5% 5% 83% 7%;
+  width: 100%;
+  font-size: 1em;
+}
+
+.message-box{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: fit-content;
+  width: 100%;
+  opacity: 0.95;
+  margin: auto;
+  margin-bottom: 15px;
+  
+}
+
+
+.container {
+  padding: 2px 16px;
+}
+
+.messagBox-flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 15px;
+  width: 45%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+.messagBox-flex:hover {
+  box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2);
+}
+
+.Title {
+  display: flex;
+  align-items: flex-start;
+  font-size: 1.2em;
+  padding-bottom: 50px;
+  font-weight: bolder;
+}
+.Comments {
+  font-size: 1em;
+  font-weight: normal;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.Createdat {
+  color: rgba(42, 42, 238, 0.479);
+  font-weight: bold;
+  margin-top: 20px;
+  font-size: 0.5em;
+  display: flex;
+  align-items: flex-start;
 }
