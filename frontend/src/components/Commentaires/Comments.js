@@ -42,7 +42,7 @@ class Comments extends Component {
     };
 
     axios
-      .post("messages/new", data)
+      .post("messages/new/", data)
       .then((res) => {
         console.log(res.data)
         this.setState({ comments: res.data});
@@ -90,7 +90,7 @@ class Comments extends Component {
                   onChange={(e) => (this.content = e.target.value)}
                 />
                 <Button
-                  onClick={this.handleSubmit}
+                  
                   type="submit"
                   color="primary"
                   variant="contained"

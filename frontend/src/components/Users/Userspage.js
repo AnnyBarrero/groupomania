@@ -18,7 +18,6 @@ export default class UsersPage extends Component {
       }
     );
   }
-
   render() {
     const paperStyle = {
       padding: "50px 50px",
@@ -72,7 +71,6 @@ export default class UsersPage extends Component {
         <Row>
           <div style={paperStyle}>
             <img alt="logo" width="50px" src="/icon.png" />
-
             <h1 style={headerStyle}>Bienvenue sur Groupomania</h1>
             <h2>Vous êtes pas connecté </h2>
           </div>

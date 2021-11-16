@@ -19,9 +19,11 @@ export default class Signup extends Component {
       .post("users/register", data)
       .then((res) => {
         console.log(res);
+        window.location.href = "./Userspage";
       })
       .catch((err) => {
         console.log(err);
+        alert("veuillez remplir les données correctement");
       });
   };
 
