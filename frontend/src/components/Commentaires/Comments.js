@@ -10,7 +10,6 @@ import { Card } from "react-bootstrap";
 import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight";
 import axios from "axios";
 
-
 class Comments extends Component {
   state = { comments: [] };
   componentDidMount() {
@@ -44,8 +43,8 @@ class Comments extends Component {
     axios
       .post("messages/new/", data)
       .then((res) => {
-        console.log(res.data)
-        this.setState({ comments: res.data});
+        console.log(res.data);
+        this.setState({ comments: res.data });
       })
       .catch((err) => {
         console.log(err);
@@ -55,7 +54,7 @@ class Comments extends Component {
   render() {
     return (
       <Grid>
-        <section >
+        <section>
           <Container className="comments-container">
             <div>
               <Typography
@@ -90,7 +89,6 @@ class Comments extends Component {
                   onChange={(e) => (this.content = e.target.value)}
                 />
                 <Button
-                  
                   type="submit"
                   color="primary"
                   variant="contained"
@@ -107,12 +105,19 @@ class Comments extends Component {
           <Container maxWidth="lg" className="message-box">
             {this.state.comments.map((items) => (
               <div className="messagBox-flex">
-                <Card key={items.id} border="primary" style={{ width: "18rem" }} className="grid-container">
+                <Card
+                  key={items.id}
+                  border="primary"
+                  style={{ width: "18rem" }}
+                  className="grid-container"
+                >
                   <Card.Header className="Title"> {items.title}</Card.Header>
                   <Card.Body>
                     <Card.Text> {items.username}</Card.Text>
                     <div className="Createdat">
-                      <Card.Title className="content">{items.createdAt}</Card.Title>
+                      <Card.Title className="content">
+                        {items.createdAt}
+                      </Card.Title>
                     </div>
                     <Card.Text className="Comments">{items.content}</Card.Text>
                     <Card.Img
@@ -125,11 +130,10 @@ class Comments extends Component {
               </div>
             ))}
           </Container>
-        </section>  
+        </section>
         <br />
       </Grid>
     );
   }
-  
 }
 export default Comments;

@@ -11,7 +11,7 @@ import Footer from './components/Footer';
 //For the login
 import UsersPage from './components/Users/Userspage';
 import Dashboard from './components/Dashboard/Dashboard';
-
+import NotFound from './components/Notfound';
 // Composant App
 function App() {
   return ( 
@@ -36,6 +36,9 @@ function App() {
     <Route path="/Comments">
     <Comments />
     </Route>
+
+    <Route component={NotFound}/>
+
     </Switch>
     <Footer/>
     </BrowserRouter>        
