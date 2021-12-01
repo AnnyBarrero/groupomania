@@ -9,8 +9,10 @@ import {
 import { Card } from "react-bootstrap";
 import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 class Comments extends Component {
+  
   state = { comments: [] };
   componentDidMount() {
     axios.get("messages").then(
@@ -26,7 +28,7 @@ class Comments extends Component {
       }
     );
   }
-
+  
   handleSubmit = (e) => {
     e.preventDefault();
     const data = {
@@ -39,15 +41,21 @@ class Comments extends Component {
       isLike: this.isLike,
       username: this.username,
     };
-
+    
     axios
-      .post("messages/new/", data)
+      .post("messages/new", data)
       .then((res) => {
         console.log(res.data);
-        this.setState({ comments: res.data });
+        if(res.status === 201) {
+          let history = useHistory();
+          this.setState(res.data)
+          history.push('/messages')
+
+        }
       })
       .catch((err) => {
         console.log(err);
+        alert("Veuillez remplir votre post correctement");
       });
   };
 

@@ -1,17 +1,19 @@
 import { Box, Button, Container, Grid, Toolbar } from "@material-ui/core";
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
 import {Component} from "react";
+import Login from "./Auth/Login";
 
 class Footer extends Component {
+  //const [name, setName] = useState();
   signOut =()=>{
     localStorage.removeItem('token', {path: "/"})
     window.location.href='./';
-  }
-  render() {
+  };
+  render(useState) {
     
-  
-  return (
+    
+   return (
       <Box
         px={{ xs: 3, sm: 12 }}
         py={{ xs: 5, sm: 5 }}
@@ -24,9 +26,23 @@ class Footer extends Component {
               <Grid item xs={12} sm={3}>
                 <Box borderBottom={1}>Aide</Box>
                 <Box>
-                  <Link className="footer-list" to={"/Login"} color="inherit">
+                 
+                  {this.signOut ? "" : <Button
+                    className="footer-list"
+                    onClick={() => this.signOut()}
+                    color="inherit"
+                  >
+                    Déconnexion
+                  </Button>  }
+                  {Login ? <Button
+                    className="footer-list"
+                    onClick={() => this.signOut()}
+                    color="inherit"
+                  >
+                    Déconnexion
+                  </Button>  : <Link className="footer-list" to={"/Login"} color="inherit">
                     Login
-                  </Link>
+                  </Link>}
                 </Box>
                 <Box>
                   <Link className="footer-list" to={"/"} color="inherit">
@@ -38,13 +54,7 @@ class Footer extends Component {
               <Grid item xs={12} sm={4}>
                 <Box borderBottom={1}>Compte</Box>
                 <Box>
-                  <Button
-                    className="footer-list"
-                    onClick={() => this.signOut()}
-                    color="inherit"
-                  >
-                    Déconnexion
-                  </Button>
+                  
                 </Box>
                 <Box>
                   <Link
@@ -55,11 +65,7 @@ class Footer extends Component {
                     Commentaires
                   </Link>
                 </Box>
-                <Box>
-                  <Link className="footer-list" to={"/Signup"} color="inherit">
-                    Signup
-                  </Link>
-                </Box>
+                
               </Grid>
             </Grid>
           </Toolbar>
